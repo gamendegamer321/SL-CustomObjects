@@ -11,4 +11,13 @@
     Text = 8,
     Interactable = 9,
     Waypoint = 10,
+    Capybara = 11,
+    Door = 12,
+    Elevator = 13,
+    Prefab = 14,
+    Sinkhole = 15,
+    Tantrum = 16,
+    Camera = 17,
+    AmnesticCloud = 18,
+    Generator = 19
 }

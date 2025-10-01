@@ -4,13 +4,13 @@ using UnityEngine;
 public class GeneratorComponent : SchematicBlock
 {
     [Tooltip("The permissions required to unlock the generator")]
-    public KeycardPermissions Permissions;
+    public KeycardPermissions Permissions = KeycardPermissions.ArmoryLevelTwo;
 
     [Tooltip("The time it takes for the generator to be activated")]
-    public float ActivationTime;
+    public float ActivationTime = 125;
 
     [Tooltip("The time it takes the generator to completely decharge after its disabled")]
-    public float DeactivationTime;
+    public float DeactivationTime = 125;
 
     [Tooltip("Whether the generator is spawned open")]
     public bool Open;

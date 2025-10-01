@@ -44,7 +44,6 @@ public class LockerComponent : SchematicBlock
     // [MinValue(0f), MaxValue(100f)]
     public float Chance = 100f;
     
-    [HideInInspector]
     public LockerType LockerType;
     
     public override BlockType BlockType => BlockType.Locker;

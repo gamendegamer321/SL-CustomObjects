@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CameraSchematicComponent : SchematicBlock
 {
-    [Tooltip("The type of the camera")] public CameraType Type;
+    [Tooltip("The type of the camera")] public CamType Type;
 
     [Tooltip("The label shown to SCP-079")]
     public string Label;
@@ -24,12 +24,17 @@ public class CameraSchematicComponent : SchematicBlock
         block.Properties = new Dictionary<string, object>
         {
             { "CameraType", Type },
-            { "VerticalConstraint", VerticalConstraint },
-            { "HorizontalConstraint", HorizontalConstraint },
-            { "ZoomConstraint", ZoomConstraint },
+            { "VerticalConstraint", GetString(VerticalConstraint) },
+            { "HorizontalConstraint", GetString(HorizontalConstraint) },
+            { "ZoomConstraint", GetString(ZoomConstraint) },
             { "Label", Label }
         };
 
         base.Compile(block);
+    }
+    
+    private static string GetString(Vector2 vector)
+    {
+        return $"({vector.x},{vector.y})";
     }
 }

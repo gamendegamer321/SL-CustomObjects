@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ElevatorComponent : SchematicBlock
@@ -33,6 +34,7 @@ public class ElevatorComponent : SchematicBlock
         base.Compile(block);
     }
 
+    [Serializable]
     public struct ElevatorDoor
     {
         [Tooltip("The position where the door is located")]

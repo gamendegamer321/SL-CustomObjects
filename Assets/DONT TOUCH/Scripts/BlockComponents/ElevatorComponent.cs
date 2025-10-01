@@ -51,10 +51,15 @@ public class ElevatorComponent : SchematicBlock
 
         public void Add(int index, Dictionary<string, object> properties)
         {
-            properties[$"Door-{index}-doorPosition"] = DoorPosition.position;
-            properties[$"Door-{index}-targetPosition"] = TargetPosition.position;
-            properties[$"Door-{index}-topPosition"] = TopPosition.position;
-            properties[$"Door-{index}-bottomPosition"] = BottomPosition.position;
+            properties[$"Door-{index}-doorPosition"] = GetString(DoorPosition.position);
+            properties[$"Door-{index}-targetPosition"] = GetString(TargetPosition.position);
+            properties[$"Door-{index}-topPosition"] = GetString(TopPosition.position);
+            properties[$"Door-{index}-bottomPosition"] = GetString(BottomPosition.position);
+        }
+
+        private static string GetString(Vector3 vector)
+        {
+            return $"({vector.x},{vector.y},{vector.z})";
         }
     }
 }
